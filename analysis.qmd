@@ -1,17 +1,18 @@
 ---
 title: "Missing Values Analysis"
-author: "Your name here"
-output: pdf_document
+format: pdf
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-library(here)
-library(ggplot2)
-library(tidyverse)
-library(texreg)
-library(mice)
-load("output","cces.RData")
+```{r}
+#| label: load-libraries
+
+source("check_packages.R")
+```
+
+```{r}
+#| label: load-analytical-data
+
+load(here("data", "data_constructed", "ces.RData"))
 ```
 
 ## Case Deletion

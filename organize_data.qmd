@@ -1,0 +1,45 @@
+---
+title: "Organize Data"
+format:
+  html:
+    code-fold: true
+    self-contained: true
+    toc: true
+    theme: flatly
+---
+
+```{r}
+#| label: load-libraries
+#| include: false
+
+# read libraries
+source("check_packages.R")
+```
+
+Load the raw CES data and select the variables we want to use. 
+
+```{r}
+#| label: load-ces-data
+
+ces <- read_csv(here("data", "data_raw","CES20_Common_OUTPUT_vv.csv.gz")) |>
+  select(ideo5, pid3, race, gender, educ, faminc_new, pew_religimp)
+```
+
+Refer to the codebook to code all variables as appropriate. Missing values should be encoded and categorical variables should be turned into proper factor variables. You should also check your coding.
+
+```{r}
+#| label: clean-code-data
+
+# do your thing here
+```
+
+
+Now save your analytical data.
+
+```{r}
+#| label: save-data
+
+# TODO: restrict the dataset to just your final analytical variables before saving
+
+save(ces, file = here("data", "data_constructed", "ces.RData"))
+```
